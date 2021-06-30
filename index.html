@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="./fontawesome-free-5.15.3-web/css/all.min.css"
+    />
+    <title>Pomodoro Timer</title>
+  </head>
+  <body>
+    <main class="hero">
+      <div class="main-container">
+        <h2>pomodoro <i class="fas fa-clock"></i></span></h2>
+        <div class="underline"></div>
+        <div class="timer-container">
+          <div class="timer-box">
+            <p class="minutes">00</p>
+            <p class="subtext">MINUTES</p>
+          </div>
+          <div class="timer-box">
+            <p class="seconds">00</p>
+            <p class="subtext">SECONDS</p>
+          </div>
+        </div>
+        <h3 class="timer-info">Start working by clicking on the play button.</h3>
+        <div class="underline"></div>
+        <form class="form">
+          <div class="form-item">
+            <p>Work duration (in minutes)</p>
+            <input type="text" name="work" id="work" value="40" />
+          </div>
+          <div class="form-item">
+            <p>Rest duration (in minutes)</p>
+            <input type="text" name="rest" id="rest" value="20" />
+          </div>
+        </form>
+        <div class="btn-container">
+          <button class="btn btn-start"><i class="fas fa-play"></i></button>
+          <button class="btn btn-pause"><i class="fas fa-pause"></i></button>
+          <button class="btn btn-stop"><i class="fas fa-stop"></i></button>
+        </div>
+        <p class='info'>Press the stop button to skip between <span class="clr-work">work</span> and <span class="clr-rest">rest</span> mode.</p>
+        <div class="underline"></div>
+        <div class="sound-container">
+          <p>Tick sound: </p>
+          <button class="btn btn-sound"><i class="fas fa-volume-up"></i></button>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>Made with <i class="fas fa-heart"></i>, Marchotridyo</p>
+    </footer>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

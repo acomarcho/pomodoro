@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --headingColor: #fffffe;
+  --textColor: #94a1b2;
+  --buttonColor: #7f5af0;
+  --buttonTextColor: #fffffe;
+  --backgroundColor: #16161a;
+  --correctColor: #00ebc7;
+  --wrongColor: #ff5470;
+  --font: "Nunito", sans-serif;
+  --transition: all 0.3s linear;
+  --radius: 1rem;
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --footerHeight: 80px;
+}
+
+body {
+  background-color: var(--backgroundColor);
+  font-family: var(--font);
+  letter-spacing: 0.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--headingColor);
+  text-align: center;
+}
+
+p {
+  color: var(--textColor);
+  text-align: center;
+  letter-spacing: 0.125rem;
+}
+
+.main-container {
+  max-width: 1170px;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.underline {
+  width: 16rem;
+  height: 0.25rem;
+  background: var(--buttonColor);
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.hero {
+  padding-top: 2rem;
+  width: 100vw;
+  min-height: calc(100vh - var(--footerHeight));
+  display: grid;
+  place-items: center;
+}
+
+.footer {
+  height: var(--footerHeight);
+  background-color: #111;
+  display: grid;
+  place-items: center;
+}
+
+/* CSS */
+.timer-container {
+  display: grid;
+  max-width: 600px;
+  width: 80vw;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  column-gap: 1rem;
+  margin-top: 1rem;
+}
+
+.timer-box {
+  background-color: var(--buttonColor);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+}
+
+.timer-box p {
+  color: var(--buttonTextColor);
+  font-weight: bold;
+}
+
+.minutes,
+.seconds {
+  font-size: 3rem;
+}
+
+.timer-box:nth-child(1) {
+  justify-self: end;
+}
+
+.timer-box:nth-child(2) {
+  justify-self: start;
+}
+
+.timer-info {
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 1rem;
+  letter-spacing: 0.125rem;
+}
+
+@media screen and (max-width: 400px) {
+  .timer-box {
+    padding: 1rem;
+  }
+}
+
+.form {
+  max-width: 600px;
+  width: 80vw;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  row-gap: 1rem;
+  margin-top: 1rem;
+}
+
+.form-item {
+  display: grid;
+  grid-template-columns: 150px 50px;
+}
+
+.form-item input {
+  text-align: center;
+}
+
+.btn-container {
+  max-width: 600px;
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.btn {
+  margin: 0 0.5rem;
+  width: 3rem;
+  padding: 0.5rem 0.5rem;
+  background-color: var(--buttonColor);
+  border: transparent;
+  color: var(--buttonTextColor);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.btn:hover {
+  transform: scale(1.2);
+}
+
+.info {
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.timer-box,
+.underline,
+.btn {
+  transition: var(--transition);
+}
+
+.rest-bg {
+  background-color: #4d88cc;
+}
+
+.clr-work {
+  color: var(--buttonColor);
+}
+
+.clr-rest {
+  color: #4d88cc;
+}
+
+.sound-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.sound-container p {
+  margin-right: 0.5rem;
+}
+
+.btn-sound {
+  margin-left: 0.5rem;
+}
