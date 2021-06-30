@@ -10,8 +10,10 @@ const timerInfo = document.querySelector(".timer-info");
 const minutes = document.querySelector(".minutes");
 const seconds = document.querySelector(".seconds");
 
-const ring = new Audio("../audio/start-sound.wav");
-const tick = new Audio("../audio/tick.wav");
+const ring = new Audio(
+  "https://acomarcho.github.io/pomodoro/audio/start-sound.wav"
+);
+const tick = new Audio("https://acomarcho.github.io/pomodoro/audio/tick.wav");
 
 const soundButton = document.querySelector(".btn-sound");
 
