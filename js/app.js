@@ -10,10 +10,18 @@ const timerInfo = document.querySelector(".timer-info");
 const minutes = document.querySelector(".minutes");
 const seconds = document.querySelector(".seconds");
 
-const ring = new Audio(
-  "https://acomarcho.github.io/pomodoro/audio/start-sound.wav"
-);
-const tick = new Audio("https://acomarcho.github.io/pomodoro/audio/tick.wav");
+const compileType = "github";
+let ring;
+let tick;
+if (compileType === "local") {
+  ring = new Audio("../audio/start-sound.wav");
+  tick = new Audio("../audio/tick.wav");
+} else {
+  ring = new Audio(
+    "https://acomarcho.github.io/pomodoro/audio/start-sound.wav"
+  );
+  tick = new Audio("https://acomarcho.github.io/pomodoro/audio/tick.wav");
+}
 
 const soundButton = document.querySelector(".btn-sound");
 
@@ -33,6 +41,36 @@ let currentMode = 0;
 let updateInterval;
 
 let tickSound = true;
+
+// STORAGE
+let workValue = localStorage.getItem("workValue");
+let restValue = localStorage.getItem("restValue");
+
+if (!workValue || !restValue || isNaN(workValue) || isNaN(restValue)) {
+  workValue = 40;
+  restValue = 20;
+  workForm.value = 40;
+  restForm.value = 20;
+  localStorage.setItem("workValue", 40);
+  localStorage.setItem("restValue", 20);
+} else {
+  workForm.value = workValue;
+  restForm.value = restValue;
+}
+
+workForm.addEventListener("input", function () {
+  const val = Math.floor(parseInt(workForm.value));
+  if (!isNaN(val) && val > 0) {
+    localStorage.setItem("workValue", val);
+  }
+});
+
+restForm.addEventListener("input", function () {
+  const val = Math.floor(parseInt(restForm.value));
+  if (!isNaN(val) && val > 0) {
+    localStorage.setItem("restValue", val);
+  }
+});
 
 soundButton.addEventListener("click", function () {
   const icon = soundButton.querySelector("i");
@@ -154,8 +192,6 @@ function updateColor() {
   const timerBoxes = document.querySelectorAll(".timer-box");
   const underlines = document.querySelectorAll(".underline");
   const btns = document.querySelectorAll(".btn");
-
-  console.log("called");
 
   if (currentMode === 0) {
     timerBoxes.forEach(function (item) {
